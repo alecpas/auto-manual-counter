@@ -1,0 +1,13 @@
+.counter-box {
+  width: 500px;
+  height: 480px;
+  border-radius: 8px;
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.counter-box > :first-child {
+  margin-top: 18px;
+}
