@@ -1,14 +1,16 @@
 import "./CounterBox.css";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import ManualCounter from "./ManualCounter/ManualCounter";
 
 const CounterBox = ({ minRange }) => {
   const [counter, setCounter] = useState(minRange);
 
   useEffect(() => {
-    console.log("numara");
-    if (counter < 60) {
-      setTimeout(() => setCounter(counter + 1), 1000);
+    if (counter < 61) {
+      setTimeout(() => setCounter(counter + 1), 600);
+    } else {
+      setCounter(0);
     }
   }, [counter]);
 
@@ -16,6 +18,7 @@ const CounterBox = ({ minRange }) => {
     <div className="counter-box">
       <div>Let's count!</div>
       <div className="auto-counting">{counter}</div>
+      <ManualCounter maxnumber={10} />
     </div>
   );
 };
