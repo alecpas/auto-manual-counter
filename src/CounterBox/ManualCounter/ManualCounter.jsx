@@ -29,7 +29,7 @@ const ManualCounter = ({ maxNumber }) => {
           <div className="text-limit-reached">
             I only know to count until 10, sorry!
           </div>
-          <RandomName />
+          <RandomName placeholder={"Enter a name..."} />
         </div>
       )}
     </div>

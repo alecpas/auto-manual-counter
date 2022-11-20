@@ -1,7 +1,7 @@
 import "./RandomName.css";
 import React, { useState } from "react";
 
-const RandomName = () => {
+const RandomName = ({ placeholder }) => {
   const nameArray = [
     "Ana Ionescu",
     "Maria Popescu",
@@ -9,20 +9,30 @@ const RandomName = () => {
     "Mihai Marin",
   ];
 
-  const [display, setDisplay] = useState(false);
-  const [options, setOptions] = useState([]);
-  const [search, setSearch] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
 
-  const [inputValue, setInputValue] = useState("Search Name");
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    const newFilter = nameArray.filter((value) => {
+      return value.toLowerCase().includes(searchWord.toLowerCase());
+    });
+    setFilteredData(newFilter);
+  };
 
   return (
     <div>
-      <input type="text" value={inputValue}></input>
-      <ul>
-        {nameArray.map((name) => (
-          <li>{name}</li>
-        ))}
-      </ul>
+      <input
+        placeholder={placeholder}
+        type="text"
+        onChange={handleFilter}
+      ></input>
+      {filteredData.length != 0 && (
+        <ul>
+          {filteredData.map((name) => (
+            <li>{name}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
