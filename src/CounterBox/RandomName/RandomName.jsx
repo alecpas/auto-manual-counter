@@ -20,7 +20,7 @@ const RandomName = ({ placeholder }) => {
   };
 
   return (
-    <div>
+    <div className="searchBar">
       <input
         placeholder={placeholder}
         type="text"

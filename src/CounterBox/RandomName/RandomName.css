@@ -1,0 +1,19 @@
+input {
+  margin-top: 20px;
+  background-color: #053546;
+  border: 1px solid;
+  border-radius: 8px;
+  color: antiquewhite;
+  padding: 10px;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+li {
+  list-style-type: none;
+  color: #053546;
+}
